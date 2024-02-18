@@ -3,14 +3,27 @@
  static void task1()
 {
     Console.WriteLine("Task1 !");
-    Console.Write("s= ");
-    string? str = Console.ReadLine();
-    float s = 0; 
-    if (str != null) s = float.Parse(str);
-    double p = 4 * Math.Sqrt(s);
-    Console.WriteLine("p=" + p);
+    Console.Write("r1: ");
+    double r1 = Convert.ToDouble(Console.ReadLine());
 
+    Console.Write("r2: ");
+    double r2 = Convert.ToDouble(Console.ReadLine());
+
+    if (r1 < 0 || r2 < 0)
+    {
+        Console.WriteLine("can`t be negative.");
+    }
+    else if (r1 > r2)
+    {
+        Console.WriteLine("inner < outter.");
+    }
+    else
+    {
+        double area = Math.PI * (r2 * r2 - r1 * r1);
+        Console.WriteLine($"S of circle: {area}");
+    }
 }
+
 Console.WriteLine("Lab 1 !");
 task1();
 // continue ...
