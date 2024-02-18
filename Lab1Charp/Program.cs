@@ -1,24 +1,34 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
 
- static void task4()
+class Program
 {
-    Console.Write("write gender (m - men, w - woman): ");
-    string gender = Console.ReadLine();
+    static double SquareOfQuotient(double num1, double num2)
+    {
+        if (num2 == 0)
+        {
+            throw new DivideByZeroException("Dividing by zero is not possible.");
+        }
 
-    if (gender == "m")
-    {
-        Console.WriteLine("mans name: Joe, John, Max.");
+        double quotient = num1 / num2;
+        return quotient * quotient;
     }
-    else if (gender == "w")
+
+    static void Main()
     {
-        Console.WriteLine("womans name: Olena, Olga, Nina.");
-    }
-    else
-    {
-        Console.WriteLine("uncorrect gender.");
+        Console.Write("Enter the first number:: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        try
+        {
+            double result = SquareOfQuotient(num1, num2);
+            Console.WriteLine($"Quotient square {num1} and {num2} equal {result}.");
+        }
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine(e.Message);
+        }
     }
 }
-
-Console.WriteLine("Lab 1 !");
-task4();
-// continue ...
