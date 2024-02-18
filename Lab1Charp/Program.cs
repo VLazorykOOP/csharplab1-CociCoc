@@ -1,27 +1,24 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
- static void task3()
+ static void task4()
 {
-    Console.Write("coordinate x: ");
-    double x = Convert.ToDouble(Console.ReadLine());
+    Console.Write("write gender (m - men, w - woman): ");
+    string gender = Console.ReadLine();
 
-    Console.Write("coordinate y: ");
-    double y = Convert.ToDouble(Console.ReadLine());
-
-    if (y > x && y < 12 - x)
+    if (gender == "m")
     {
-        Console.WriteLine("yes");
+        Console.WriteLine("mans name: Joe, John, Max.");
     }
-    else if (y == x || y == 12 - x)
+    else if (gender == "w")
     {
-        Console.WriteLine("on edge");
+        Console.WriteLine("womans name: Olena, Olga, Nina.");
     }
     else
     {
-        Console.WriteLine("no");
+        Console.WriteLine("uncorrect gender.");
     }
 }
 
 Console.WriteLine("Lab 1 !");
-task3();
+task4();
 // continue ...
