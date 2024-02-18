@@ -1,29 +1,31 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
- static void task1()
+ static void task2()
 {
-    Console.WriteLine("Task1 !");
-    Console.Write("r1: ");
-    double r1 = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Put 3 digit number: ");
+    int number = Convert.ToInt32(Console.ReadLine());
 
-    Console.Write("r2: ");
-    double r2 = Convert.ToDouble(Console.ReadLine());
-
-    if (r1 < 0 || r2 < 0)
+    if (number < 100 || number > 999)
     {
-        Console.WriteLine("can`t be negative.");
-    }
-    else if (r1 > r2)
-    {
-        Console.WriteLine("inner < outter.");
+        Console.WriteLine("number must have 3 digit.");
     }
     else
     {
-        double area = Math.PI * (r2 * r2 - r1 * r1);
-        Console.WriteLine($"S of circle: {area}");
+        int digit1 = number / 100;
+        int digit2 = (number / 10) % 10;
+        int digit3 = number % 10;
+
+        if (digit1 == digit2 && digit2 == digit3)
+        {
+            Console.WriteLine("all digits are same.");
+        }
+        else
+        {
+            Console.WriteLine("digits are not the same.");
+        }
     }
 }
 
 Console.WriteLine("Lab 1 !");
-task1();
+task2();
 // continue ...
